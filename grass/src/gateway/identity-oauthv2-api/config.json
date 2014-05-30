@@ -1,0 +1,106 @@
+{
+   "configurations":[
+     {
+         "name":"prod",
+
+         "policies":[
+         {
+                    "name": "redirectToConsent.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/Headers/Header[@name='Location']",
+                            "value": "http://abhijithcs1993-test.apigee.net/openid/index?sessionid={sessionid}"
+                        }
+                    ]
+                },
+				{
+                    "name": "GetUserProfileFromAppServices.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "http://abhijithcs1993-test.apigee.net/identity-users/v1/users/{accesstoken.userid}"
+                        }
+                    ]
+                },
+				{
+                    "name": "AssignStoreConsentRequest.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/Headers/Header[@name='Authorization']",
+                            "value": "Basic NjBSVmVscVlqSE90MDBUaWJxWGJ1UWlHa254NzVLNmk6QlBnNVBETWp6a1NVcTNGQwo="
+                        }
+                    ]
+                },
+				{
+                    "name": "StoreConsent.ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "http://abhijithcs1993-test.apigee.net/identity/consents"
+                        }
+                    ]
+                }
+         ],
+         "proxies":[
+          ] ,
+         "targets":[
+         ]
+      },
+     {
+         "name":"test",
+
+         "policies":[
+           {
+                    "name": "redirectToConsent.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/Headers/Header[@name='Location']",
+                            "value": "http://abhijithcs1993-test.apigee.net/openid/index?sessionid={sessionid}"
+                        }
+                    ]
+                },
+				{
+                    "name": "GetUserProfileFromAppServices.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "http://abhijithcs1993-test.apigee.net/identity-users/v1/users/{accesstoken.userid}"
+                        }
+                    ]
+                },
+				{
+                    "name": "AssignStoreConsentRequest.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/AssignMessage/Set/Headers/Header[@name='Authorization']",
+                            "value": "Basic NjBSVmVscVlqSE90MDBUaWJxWGJ1UWlHa254NzVLNmk6QlBnNVBETWp6a1NVcTNGQwo="
+                        }
+                    ]
+                },
+				{
+                    "name": "StoreConsent.ServiceCallout.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ServiceCallout/HTTPTargetConnection/URL",
+                            "value": "http://abhijithcs1993-test.apigee.net/identity/consents"
+                        }
+                    ]
+                }
+         ],
+         "proxies":[
+          ] ,
+         "targets":[
+         ]
+      },
+	{
+         "name":"demo",
+
+         "policies":[
+         ],
+         "proxies":[
+          ] ,
+         "targets":[
+         ]
+      }
+   ]
+}

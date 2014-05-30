@@ -1,0 +1,16 @@
+{
+   "name": "identity-consent-mgmt",
+   "version": "0.0.1",
+   "private": true,
+   "client_id": "YOUR APP SERVICES CLIENT_ID",
+   "client_secret": "YOUR APP SERVICES CLIENT_SECRET",
+   "orgName": "YOUR ORG NAME",
+   "appName": "YOUR APP NAME IN APP SERVICES",
+
+   "dependencies": {
+     "express": "2.5.8",
+     "stylus": ">= 0.0.1",
+     "jade": ">= 0.0.1"
+  }
+  }
+
